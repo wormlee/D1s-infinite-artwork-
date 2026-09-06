@@ -183,7 +183,7 @@ document.addEventListener('touchmove',e=>{
      pinchStartTarget += change*0.18;
    }
    const step=clamp(pinchStartTarget-targetDepth,-0.018,0.018);
-   targetDepth=clamp(targetDepth+step,0,1.08);
+   targetDepth=clamp(targetDepth+step,0.2,1,08);
    pinchVelocity=pinchVelocity*0.8+(d-pinchLast)*0.2;
    pinchLast=d;
  }
