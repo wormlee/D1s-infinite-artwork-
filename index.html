@@ -158,7 +158,7 @@ document.addEventListener('touchstart',e=>{
  if(e.touches.length===2){pinchStart=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);depthStart=targetDepth;}
 },{passive:false});
 document.addEventListener('touchmove',e=>{
- if(e.touches.length===2){e.preventDefault();const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);targetDepth=clamp(depthStart+(pinchStart-d)/900,0,1.08);}
+ if(e.touches.length===2){e.preventDefault();const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);targetDepth=clamp(depthStart+(pinchStart-d)/1200,0,1.08);}
 },{passive:false});
 document.querySelectorAll('.portal').forEach(p=>p.addEventListener('pointerup',e=>{e.stopPropagation();flash();targetDepth=clamp(targetDepth+.75,0,1.08);}));
 setTimeout(()=>document.getElementById('hint').style.opacity=.25,5000);
